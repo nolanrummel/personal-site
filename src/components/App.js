@@ -1,10 +1,7 @@
 import React from "react"
 
 import Sections from "./Sections"
-import ScrollamaDemo from "./Scrollrama"
-import Scroller from "./Scroller"
-import '../App.css'
-import About from "./About"
+import "../App.css"
 
 export default function App() {
   
@@ -12,11 +9,5 @@ export default function App() {
     <div>
       <Sections />
     </div>
-    // <div>
-    //   <ScrollamaDemo />
-    // </div>
-    // <div>
-    //   <Scroller />
-    // </div>
   )
 }

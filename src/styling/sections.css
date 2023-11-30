@@ -1,0 +1,23 @@
+.section-nav-container {
+    position: absolute;
+    top: 50%;
+    left: 99%;
+    transform: translate(0, -50%);
+    margin-left: -25px;
+}
+
+.section-collapsed {
+    height: 5vh;
+}
+
+.circles-container {
+    padding-block: 5px;
+}
+
+.section-navbar-circles {
+    display: flex;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: black;
+}

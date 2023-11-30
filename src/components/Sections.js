@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react"
 
-import '../scroller.css'
+import SectionNavBar from "./SectionNavBar"
+import About from "./About"
+import "../styling/sections.css"
+// import '../scroller.css'
 
 export default function Sections() {
     const [display, setDisplay] = useState(1)
@@ -22,10 +25,8 @@ export default function Sections() {
     //(speeds up time between direction changes)
     useEffect(() => {
         if (direction === 'down' && wheelMove < 0) {
-            console.log('triggered 1')
             setWheelMove(0)
         } else if (direction === 'up' && wheelMove > 0) {
-            console.log('triggered 2')
             setWheelMove(0)
         }
     }, [direction])
@@ -41,14 +42,14 @@ export default function Sections() {
 
     //checks if wheelMove has passed the threshold to change sections
     useEffect(() => {
-        if (wheelMove > 1500) {
+        if (wheelMove > 1800) {
             if (display >= 4) {
                 setDisplay(4)
             } else {
                 setDisplay(display + 1)   
             }
             setWheelMove(0)
-        } else if (wheelMove < -1500) {
+        } else if (wheelMove < -1800) {
             if (display <= 1) {
                 setDisplay(1)
             } else {
@@ -60,22 +61,27 @@ export default function Sections() {
     
     return (
         <div>
+            <div className="section-nav-container">
+                <SectionNavBar display={display} setDisplay={setDisplay} setWheelMove={setWheelMove}/>
+            </div>
             <div>
-                <div className="s1" style={display == 1 ? {height: '70vh'} : {height: '10vh'}}>
-                    <h1>Section 1</h1>
-                    <p>Content Shown here. Blah Blah Blah</p>
+                <div classname="section-1">
+                    {display == 1 ?
+                        <About />
+                        :
+                        <div className="section-collapsed" style={{backgroundColor: 'red'}}>
+                            <h1>About</h1>
+                        </div>
+                    }
                 </div>
-                <div className="s2" style={display == 2 ? {height: '70vh'} : {height: '10vh'}}>
-                    <h1>Section 2</h1>
-                    <p>Content Shown here. Blah Blah Blah</p>
+                <div className="s2" style={display == 2 ? {height: '85vh'} : {height: '5vh'}}>
+                    <h1>Projects</h1>
                 </div>
-                <div className="s3" style={display == 3 ? {height: '70vh'} : {height: '10vh'}}>
-                    <h1>Section 3</h1>
-                    <p>Content Shown here. Blah Blah Blah</p>
+                <div className="s3" style={display == 3 ? {height: '85vh'} : {height: '5vh'}}>
+                    <h1>Resume</h1>
                 </div>
-                <div className="s4" style={display == 4 ? {height: '70vh'} : {height: '10vh'}}>
-                    <h1>Section 4</h1>
-                    <p>Content Shown here. Blah Blah Blah</p>
+                <div className="s4" style={display == 4 ? {height: '85vh'} : {height: '5vh'}}>
+                    <h1>Contact</h1>
                 </div>
             </div>
         </div>

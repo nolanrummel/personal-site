@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 
 import '../scroller.css'
-import { UNSAFE_FetchersContext } from "react-router-dom"
 
 export default function Sections() {
     const [display, setDisplay] = useState(1)

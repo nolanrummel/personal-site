@@ -1,13 +1,22 @@
-import '../App.css';
-import { ReactComponent as BikeIcon } from '../icons/bike-icon.svg'
+import React from "react"
+
+import Sections from "./Sections"
+import ScrollamaDemo from "./Scrollrama"
+import Scroller from "./Scroller"
+import '../App.css'
+import About from "./About"
 
 export default function App() {
+  
   return (
     <div>
-      <h1 className="text-3xl underline">
-        Hello world!
-      </h1>
-      {/* <BikeIcon /> */}
+      <Sections />
     </div>
+    // <div>
+    //   <ScrollamaDemo />
+    // </div>
+    // <div>
+    //   <Scroller />
+    // </div>
   )
 }

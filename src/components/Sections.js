@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react"
 
 import SectionNavBar from "./SectionNavBar"
 import About from "./About"
+import Projects from "./Projects"
+import Resume from "./Resume"
+import Contact from "./Contact"
 import "../styling/sections.css"
-// import '../scroller.css'
 
 export default function Sections() {
     const [display, setDisplay] = useState(1)
@@ -65,23 +67,41 @@ export default function Sections() {
                 <SectionNavBar display={display} setDisplay={setDisplay} setWheelMove={setWheelMove}/>
             </div>
             <div>
-                <div classname="section-1">
+                <div className="section-1">
                     {display == 1 ?
                         <About />
                         :
-                        <div className="section-collapsed" style={{backgroundColor: 'red'}}>
-                            <h1>About</h1>
+                        <div className="section-title-container" style={{backgroundColor: '#1c7293'}}>
+                            <h1 className="section-title" onClick={() => setDisplay(1)}>ABOUT</h1>
                         </div>
                     }
                 </div>
-                <div className="s2" style={display == 2 ? {height: '85vh'} : {height: '5vh'}}>
-                    <h1>Projects</h1>
+                <div className="section-2">
+                    {display == 2 ?
+                        <Projects />
+                        :
+                        <div className="section-title-container" style={{backgroundColor: '#065A82'}}>
+                            <h1 className="section-title" onClick={() => setDisplay(2)}>PROJECTS</h1>
+                        </div>
+                    }
                 </div>
-                <div className="s3" style={display == 3 ? {height: '85vh'} : {height: '5vh'}}>
-                    <h1>Resume</h1>
+                <div className="section-3">
+                    {display == 3 ?
+                        <Resume />
+                        :
+                        <div className="section-title-container" style={{backgroundColor: '#1B3B6F'}}>
+                            <h1 className="section-title" onClick={() => setDisplay(3)}>RESUME</h1>
+                        </div>
+                    }
                 </div>
-                <div className="s4" style={display == 4 ? {height: '85vh'} : {height: '5vh'}}>
-                    <h1>Contact</h1>
+                <div className="section-4">
+                    {display == 4 ?
+                        <Contact />
+                        :
+                        <div className="section-title-container" style={{backgroundColor: '#21295C'}}>
+                            <h1 className="section-title" onClick={() => setDisplay(4)}>CONTACT</h1>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

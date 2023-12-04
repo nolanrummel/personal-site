@@ -1,7 +1,6 @@
 import React from "react"
 
 import "../styling/sections.css"
-import "../styling/scroller.css"
 
 export default function SectionNavBar({display, setDisplay, setWheelMove}) {
     const handleDisplay = (e) => {

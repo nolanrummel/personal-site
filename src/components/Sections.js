@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { CSSTransition } from "react-transition-group"
 
 import SectionNavBar from "./SectionNavBar"
 import About from "./About"
@@ -69,7 +70,13 @@ export default function Sections() {
             <div>
                 <div className="section-1">
                     {display == 1 ?
-                        <About />
+                        <CSSTransition
+                            classNames={"fade"}
+                            timeout={300}
+                            unmountOnExit
+                        >
+                            <About />
+                        </CSSTransition>
                         :
                         <div className="section-title-container" style={{backgroundColor: '#1c7293'}}>
                             <h1 className="section-title" onClick={() => setDisplay(1)}>ABOUT</h1>
@@ -78,7 +85,13 @@ export default function Sections() {
                 </div>
                 <div className="section-2">
                     {display == 2 ?
-                        <Projects />
+                        <CSSTransition
+                        classNames={"fade"}
+                        timeout={300}
+                        unmountOnExit
+                        >
+                            <Projects />
+                        </CSSTransition>
                         :
                         <div className="section-title-container" style={{backgroundColor: '#065A82'}}>
                             <h1 className="section-title" onClick={() => setDisplay(2)}>PROJECTS</h1>
